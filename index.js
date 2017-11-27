@@ -9,16 +9,16 @@ function getRepositories() {
   const username = document.getElementById("username").value;
   const req = new XMLHttpRequest()
   req.addEventListener("load", displayRepositories);
-  req.open("GET", 'https://api.github.com/users/$(username)/repos')
+  req.open("GET", 'https://api.github.com/users/${username}/repos')
   req.send()
 }
 
 function getCommits(el) {
   const username = document.getElementById("username").value
-  const name = el.dataset.repo
+  const repoName = el.dataset.repo
   const req = new XMLHttpRequest()
   req.addEventListener("load", displayCommits)
-  req.open("GET", 'https://api.github.com/repos/' + username + '/' + name + '/commits')
+  req.open("GET", 'https://api.github.com/repos/${username}/${repoName}/commits')
   req.send()
 }
 
@@ -30,10 +30,10 @@ function displayCommits() {
 
 function getBranches(el) {
   var username = document.getElementById("username").value
-  const name = el.dataset.repo
+  const repoName = el.dataset.repo
   const req = new XMLHttpRequest()
   req.addEventListener("load", displayBranches)
-  req.open("GET", 'https://api.github.com/repos/' + username + '/' + name + '/branches')
+  req.open("GET", 'https://api.github.com/repos/${username}/${repoName}/branches')
   req.send()
 }
 
