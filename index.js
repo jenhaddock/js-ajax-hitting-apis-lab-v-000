@@ -28,17 +28,17 @@ function displayCommits() {
   document.getElementById("commits").innerHTML = commitsList
 }
 
-function getBranches(el) {
-  var username = document.getElementById("username").value
-  const name = el.dataset.repo
-  const req = new XMLHttpRequest()
-  req.addEventListener("load", displayBranches)
-  req.open("GET", 'https://api.github.com/repos/' + username + '/' + name + '/branches')
-  req.send()
-}
+//function getBranches(el) {
+//  var username = document.getElementById("username").value
+  //const name = el.dataset.repo
+  //const req = new XMLHttpRequest()
+  //req.addEventListener("load", displayBranches)
+  //req.open("GET", 'https://api.github.com/repos/' + username + '/' + name + '/branches')
+  //req.send()
+//}
 
-function displayBranches() {
-  const branches = JSON.parse(this.responseText)
-  const branchesList = `<ul>${branches.map(branch => '<li><strong>' + branch.name '</strong>' + '</li>').join('')}</ul>`
-  document.getElementById("branches").innerHTML = branchesList
-}
+//function displayBranches() {
+  //const branches = JSON.parse(this.responseText)
+  //const branchesList = `<ul>${branches.map(branch => '<li><strong>' + branch.name '</strong>' + '</li>').join('')}</ul>`
+  //document.getElementById("branches").innerHTML = branchesList
+//}
